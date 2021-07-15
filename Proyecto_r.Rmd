@@ -132,7 +132,7 @@ TRUE a partir del año en que se impuso el lavado de manos.
 
 ```{r}
 monthly3  <-monthly2 %>%
-mutate (handwashing_started = ifelse (date >= 1847, TRUE, FALSE))
+mutate (handwashing_started = ifelse (date >= "1847-01-01", TRUE, FALSE))
 monthly3
 
 ```
