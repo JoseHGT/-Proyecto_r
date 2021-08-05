@@ -177,4 +177,27 @@ month_summary
   
 ```
 
+Dandole formato al resultado final:
+
+```{r}
+library(flextable)
+library(officer)
+
+
+ft <- flextable( month_summary) %>%
+  theme_booktabs(bold_header = TRUE) %>%  #Agregando negrita a los encabezados
+  align(align = "center", part = "all")   #Centrando y alineando. 
+ 
+ft
+
+out_border = fp_border(color="blue", width = 2)  #Definiendo las variables de color para borde externo e interno.
+inner_border = fp_border(color="red", width = 1)
+
+ft <- border_outer(ft, part="all", border = out_border )
+ft <- border_inner_h(ft, part="all", border = inner_border )
+ft <- border_inner_v(ft, part="all", border = inner_border )
+ft
+```
+
+
 Fin Proyecto José Luis Hernández.
